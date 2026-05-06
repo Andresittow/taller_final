@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#7c9c00",
+                    "background": "#121414",
+                    "on-tertiary-fixed-variant": "#3c4d00",
+                    "surface-container-low": "#1a1c1c",
+                    "secondary-fixed-dim": "#ffb68b",
+                    "on-tertiary-container": "#222e00",
+                    "on-secondary-container": "#602a00",
+                    "on-primary-container": "#590026",
+                    "primary": "#ffb1c3",
+                    "on-secondary": "#522300",
+                    "tertiary-fixed": "#c3f400",
+                    "secondary-container": "#ff7f1c",
+                    "secondary": "#ffb68b",
+                    "primary-fixed-dim": "#ffb1c3",
+                    "on-secondary-fixed": "#321200",
+                    "surface-tint": "#ffb1c3",
+                    "tertiary-fixed-dim": "#abd600",
+                    "on-surface": "#e2e2e2",
+                    "outline": "#ac878f",
+                    "tertiary": "#abd600",
+                    "on-background": "#e2e2e2",
+                    "inverse-on-surface": "#2f3131",
+                    "on-primary-fixed-variant": "#8f0041",
+                    "primary-container": "#ff4b89",
+                    "on-primary-fixed": "#3f0019",
+                    "surface-container-high": "#282a2b",
+                    "on-surface-variant": "#e5bcc4",
+                    "on-tertiary-fixed": "#161e00",
+                    "surface-dim": "#121414",
+                    "surface-container-lowest": "#0c0f0f",
+                    "surface-container-highest": "#333535",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#ffdbc8",
+                    "primary-fixed": "#ffd9e0",
+                    "on-tertiary": "#283500",
+                    "on-secondary-fixed-variant": "#753400",
+                    "surface-bright": "#37393a",
+                    "outline-variant": "#5c3f45",
+                    "surface-variant": "#333535",
+                    "surface-container": "#1e2020",
+                    "on-primary": "#66002c",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e2e2e2",
+                    "surface": "#121414",
+                    "inverse-primary": "#bb0058",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "0.5rem",
+                    "stack-md": "1.5rem",
+                    "container-margin": "1.25rem",
+                    "gutter": "1rem",
+                    "stack-lg": "3rem",
+                    "section-padding": "4rem"
+            },
+            "fontFamily": {
+                    "label-bold": ["Epilogue"],
+                    "headline-md": ["Epilogue"],
+                    "body-sm": ["Epilogue"],
+                    "display-xl": ["Epilogue"],
+                    "display-lg": ["Epilogue"],
+                    "body-lg": ["Epilogue"],
+                    "artist-name": ["Epilogue"]
+            },
+            "fontSize": {
+                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "artist-name": ["18px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(171, 214, 0, 0.4);
+        }
+        .pink-cloud {
+            filter: blur(40px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-sm overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-full bg-surface/10 dark:bg-surface/10 backdrop-blur-xl border-b border-white/10">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-display-lg uppercase tracking-tighter text-primary dark:text-primary">estéreo picnic</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-tertiary font-bold border-b-2 border-tertiary font-label-bold text-label-bold transition-transform active:scale-95" href="#">Inicio</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-tertiary transition-colors duration-300" href="#">Lineup</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-tertiary transition-colors duration-300" href="#">Tickets</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-tertiary transition-colors duration-300" href="#">Mapa</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-tertiary transition-colors duration-300" href="#">Experiencias</a>
+</nav>
+<div class="flex items-center">
+<button class="bg-tertiary text-on-tertiary font-label-bold text-label-bold px-6 py-2 rounded-full hover:scale-105 transition-transform">
+                Tickets
+            </button>
+</div>
+</header>
+<main class="relative pt-20">
+<!-- Abstract Background Elements -->
+<div class="fixed top-20 -left-20 w-96 h-96 bg-primary-container pink-cloud rounded-full"></div>
+<div class="fixed bottom-20 -right-20 w-80 h-80 bg-secondary-container pink-cloud rounded-full" style="opacity: 0.2"></div>
+<!-- Hero / Lineup Section -->
+<section class="min-h-screen px-container-margin py-stack-lg">
+<div class="mb-stack-lg text-center">
+<h1 class="font-display-xl text-display-xl text-primary uppercase italic mb-2">Un Mundo Distinto</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">21, 22 y 23 de Marzo, 2024 • Bogotá, Colombia</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter min-h-[716px]">
+<!-- Day 1: Pink -->
+<div class="bg-primary-container p-gutter rounded-xl flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
+<div>
+<span class="font-label-bold text-label-bold bg-white/20 px-2 py-1 rounded">JUL 21</span>
+<h2 class="font-display-xl text-display-xl text-on-primary-container mt-4 uppercase">Blink-182</h2>
+</div>
+<div class="mt-8">
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant leading-relaxed">
+                            FEID • THE OFFSPRING • THIRTY SECONDS TO MARS • KING GIZZARD &amp; THE LIZARD WIZARD • PHOENIX • GRETA VAN FLEET
+                        </p>
+</div>
+</div>
+<!-- Day 2: Lime Green -->
+<div class="bg-tertiary-container p-gutter rounded-xl flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
+<div>
+<span class="font-label-bold text-label-bold bg-white/20 px-2 py-1 rounded text-on-tertiary-container">VIE 22</span>
+<h2 class="font-display-xl text-display-xl text-on-tertiary-container mt-4 uppercase">Arcade Fire</h2>
+</div>
+<div class="mt-8">
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant leading-relaxed">
+                            SZA • LIMP BIZKIT • HOZIER • PLACEBO • JAMES BLAKE • ARCA • FOUR TET • JUNGLE • THE BLAZE • OMAR APOLLO
+                        </p>
+</div>
+</div>
+<!-- Day 3: Coral -->
+<div class="bg-secondary-container p-gutter rounded-xl flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
+<div>
+<span class="font-label-bold text-label-bold bg-white/20 px-2 py-1 rounded text-on-secondary-container">SAB 23</span>
+<h2 class="font-display-xl text-display-xl text-on-secondary-container mt-4 uppercase">Justice</h2>
+</div>
+<div class="mt-8">
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant leading-relaxed">
+                            SAM SMITH • KEVIN KAARL • BLACK PUMAS • NICKI NICOLE • THE BLESSED MADONNA • WHOMADEWHO • TOKISCHA
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Artistas Destacados Bento Grid -->
+<section class="px-container-margin py-section-padding bg-surface-container-low">
+<h3 class="font-display-lg text-display-lg mb-stack-lg text-primary uppercase text-center md:text-left">Artistas Destacados</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter h-auto md:h-[600px]">
+<div class="col-span-2 row-span-2 relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide angle shot of a massive music festival stage at night with thousands of cheering fans. Intense pink and neon green stage lights cut through the dark sky, illuminating the atmospheric fog and high-energy crowd. The visual style is energetic and professional, capturing the euphoric spirit of a major outdoor concert under a vibrant, high-contrast lighting scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTag27naS55xJXJBcuIraQks4sfCVIEq_2cgyD1eP58eBrBedUaSypB3Q2f0q70b2p2lKH2ORvDsAlL2ZOW5Y_nMaY-TYxta79zfbysDNT6qMhKSDnNcdfQe76omyLSWLjZEbwh-_OdBaM8d2NpC9VaSu61yeHvUV_vDK-_4zAHzKXiQnmjFc1KixCHDVf9MiCwZIyDysYv9XgMYVdT2dNJedqTU6fDPmr7R0siZuO0YI-72kUc3yQi19nV5j-qeIZuYoUzQUTmM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-end items-end p-6">
+<span class="font-display-lg text-display-lg text-white uppercase italic">Headliners</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up portrait of a soul singer performing with intense emotion under warm orange spotlights. The background is a soft blur of festival lights and shadows, emphasizing the performer's passionate expression. The lighting is dramatic and moody, reflecting a high-end neo-soul aesthetic with vibrant warm tones and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANOTg9gvByHHl6BI09hQ6fJE93_tiMk8-p0Sg5R3WmcY37q32JYCahumey7zISnDpCol4aRaSHDrcX3fga9WqAVUxNJxLyXL_xql3jxrINfD1UzZ34jEsNzZD1_tfUyZS-PX3W2gseil-IvPvL7i15gHeKDlgdo5Uv8twagtNqa3_M-GFzRl6t6tS8-BL_o1vnFNG8o4vxjMMT86DGEc2VQJu96pz9v8o3B7Hjz5wpALL1vMMiw_S8V_0SpjxE_cGoWMY9N1oVhIM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-end items-end p-4">
+<span class="font-artist-name text-artist-name text-white">Neo Soul Diva</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-contrast photo of a DJ booth with glowing synthesizers and mixing boards emitting sharp lime green light. In the background, laser beams cut through a dark, foggy club environment. The visual style is sharp and electronic, focused on the technology and the intense, electric energy of a modern electronic dance music performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbHDPjHyTbRykAt8gZ6rJtioBst_4vlrzJNmEAzH8d7HrdVikY-2txh6MKcacDhY7C0cAgCnpC0cohfrZzmnUcEOqGIsTyOiIxGcFpndTkYdE1uHaIqtS-k7poacfDMnUoefD2k81qxLjtIEbCtuLMFV4j44wy1yFxkctw_R_-93YTcQfwZwjNBAWS8y68gvDnnfHYOXWWc9os_gGpBNUomncOqc2my7kj-sboDHxobwVqpn_1-nnH8rn8bTDOASqXYS6soj4FlAM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-end items-end p-4">
+<span class="font-artist-name text-artist-name text-white">Electro Shock</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic capture of a jazz band performing on an outdoor festival stage during the golden hour. Warm, natural light floods the scene, highlighting brass instruments and a drummer in action. The mood is sophisticated and organic, blending the electric festival energy with a classic, refined jazz performance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzOavrGV5AbHVZ4rk3dJAGldPhw_ijPrk5J8moul6Ff3974gP7g-FEcVS3gipblwoxQNA3YHSnVtvytSTSRh9v8LVPpopU4zKMIOC8991ecCZ8JCp3Si1_teOIB9QgNEaWkr33E_fDArH-5IZAFEZvxw4jBB1pnBC3MijDfG-DKUgQn21ldyyGbSES9vsZ-3VedieFylQtNRoN7XZLH1yjfpphOtG7y-USNk0uinRcTNc_g-ZYm5bUbCXDQMUGOQDLRwNjM3CqWLI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-end items-end p-4">
+<span class="font-artist-name text-artist-name text-white">The Jazz Collective</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dreamy, medium shot of a hip-hop artist performing amidst a field of pink flowers, with a setting sun in the distant background. The lighting is soft and ethereal, using a palette of pinks, oranges, and deep purples. This image merges urban street style with a surreal, dreamlike nature setting to create a unique visual narrative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhk1ECUZJtIG-1uVcDDB90gtSTs08y5pCEidu00Wcqh7JgXJu1iS94ob7eHa_n6ITzmkPtKlb8bMS2rNeC6FNIEjDhxQZgFTMGiCZpJ6bk2AEfjKi5Wm2JscIgGD0fcvMhmUwpFgkH6gkzdmvK69oaGO4wpA4Nzq4aSlLoMxvC2VnjvfRDhhG8wnY4PovXgbG3hSeShbguTKezwaUyTq7ZogotcCrmT5JU9kzFYHXFv21k38GgydhO-_Md4IzR4z-rNaiuRuJcRZM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-end items-end p-4">
+<span class="font-artist-name text-artist-name text-white">Urban Beats</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Aftermovie Section -->
+<section class="w-full h-[614px] relative flex items-center justify-center bg-black overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="A sprawling panoramic shot of a music festival at night, showing multiple glowing stages and thousands of people under a starry sky. The entire scene is captured with a high-fidelity cinematic look, emphasizing the scale and vibrant neon colors of the festival infrastructure. This image represents the grand, collective experience of the event's aftermovie." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiFLlGXyu2qwhtBtntSl11LaddExiFFyhg5zRo507kq0p0amepIYzVhV-DATkN7dZYeGMetAAcb6KJIZpd7ML-QU9IIx1rDA0N4VEU8vapJ6a0lLen1f0TDaLhddMDADIaL1_Xt_13pG89XhlBzVRAmvWJD3iev475OMo00Dp3Quog-Dum6LcBIIEBM2sE8taBPePPMYu4pg-pCobqWgbhj3VfgjeHHtzZ2DeQPFMnj3Ok0ojpAM-fF9M-yQnr7zRJAQFA1A1I_2A"/>
+<div class="relative z-10 text-center">
+<button class="w-24 h-24 rounded-full bg-tertiary flex items-center justify-center mb-6 hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-on-tertiary" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</button>
+<h4 class="font-display-lg text-display-lg text-white uppercase tracking-widest">Aftermovie Oficial 2023</h4>
+</div>
+</section>
+<!-- Compra tus Entradas -->
+<section class="px-container-margin py-section-padding">
+<h3 class="font-display-lg text-display-lg mb-stack-lg text-primary uppercase text-center">Compra tus Entradas</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Tier 1 -->
+<div class="glass-card p-stack-md rounded-xl flex flex-col justify-between">
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">COMBO 3 DÍAS GENERAL</h4>
+<span class="font-display-lg text-display-lg text-primary">$850.000</span>
+<ul class="mt-stack-md space-y-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Acceso a todos los escenarios</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Zona de experiencias de marcas</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Acceso a puestos de comida</li>
+</ul>
+</div>
+<button class="w-full mt-stack-lg py-4 border-2 border-white/20 rounded-full font-label-bold text-label-bold uppercase hover:bg-white/10 transition-colors">Comprar</button>
+</div>
+<!-- Tier 2 (Recommended) -->
+<div class="bg-tertiary p-stack-md rounded-xl flex flex-col justify-between transform md:scale-110 relative shadow-2xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary-fixed font-label-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Recomendado</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2 text-on-tertiary">COMBO 3 DÍAS VIP</h4>
+<span class="font-display-xl text-display-xl text-on-tertiary">$1.550.000</span>
+<ul class="mt-stack-md space-y-4 text-on-tertiary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill">check</span> Entrada rápida al festival</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill">check</span> Zonas VIP con vista preferencial</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill">check</span> Baños premium y barras exclusivas</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill">check</span> Merchandising de regalo</li>
+</ul>
+</div>
+<button class="w-full mt-stack-lg py-4 bg-background text-on-background rounded-full font-label-bold text-label-bold uppercase hover:scale-[1.02] transition-transform">Comprar</button>
+</div>
+<!-- Tier 3 -->
+<div class="glass-card p-stack-md rounded-xl flex flex-col justify-between">
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">COMBO 3 DÍAS COMFORT</h4>
+<span class="font-display-lg text-display-lg text-primary">$1.150.000</span>
+<ul class="mt-stack-md space-y-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Filas de ingreso preferenciales</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Zonas de descanso exclusivas</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check">check</span> Baños con aire acondicionado</li>
+</ul>
+</div>
+<button class="w-full mt-stack-lg py-4 border-2 border-white/20 rounded-full font-label-bold text-label-bold uppercase hover:bg-white/10 transition-colors">Comprar</button>
+</div>
+</div>
+</section>
+<!-- Payment & Hotel Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-container-margin py-section-padding">
+<!-- Alcancias -->
+<div class="bg-primary-container rounded-xl p-stack-md flex flex-col md:flex-row items-center gap-6 overflow-hidden">
+<div class="flex-1">
+<h4 class="font-display-lg text-display-lg text-on-primary-container uppercase mb-4">Alcancías Armatuvaca</h4>
+<p class="font-body-sm text-on-primary-fixed-variant mb-6">Paga tu entrada a cuotas sin intereses y asegura tu lugar en Un Mundo Distinto.</p>
+<button class="bg-white text-on-primary-fixed font-label-bold text-label-bold px-6 py-3 rounded-full uppercase">Saber más</button>
+</div>
+<div class="w-48 h-48 bg-tertiary rounded-full flex items-center justify-center shrink-0 -mr-12 -mb-12">
+<span class="material-symbols-outlined text-on-tertiary text-8xl" data-icon="savings">savings</span>
+</div>
+</div>
+<!-- Crewfare Hotels -->
+<div class="relative rounded-xl overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxury boutique hotel exterior with a modern design, warm ambient lighting, and lush tropical landscaping at night. The image captures a high-end travel experience, characterized by premium architecture and a serene, upscale atmosphere. The color palette features deep blues, soft ambers, and vibrant greens, aligning with the festival's premium partner aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyb_2K_6_JbYcqdSccVsi8p9pehjDEDohjX7rcVlPbjjAc_4auQ_9EDdLofXW7QOO9X3SwkHoXRgS3dek-2JHqe4OGHPOoYDYf0l-KVzwrRa50WOlvwLur-bzqly2pWGyQTHM4H8aRW3gi0ELwn9-DXTApejDdIOpB7ax8-1qkTIAhxbhTSu397-MVJTe5KDaqtvXpEUdH41Ww5181PnDINqYWaJ2XDV--IzQFGBrP0uj4kJhEOv3VmqlesMPEthiIofRBIAbseoI"/>
+<div class="absolute inset-0 bg-black/50 p-stack-md flex flex-col justify-end">
+<h4 class="font-display-lg text-display-lg text-white uppercase mb-2">Crewfare Hotels</h4>
+<p class="font-body-sm text-white/80 mb-6 max-w-xs">Encuentra los mejores hoteles con tarifas exclusivas para el festival.</p>
+<button class="w-fit bg-secondary text-on-secondary-fixed font-label-bold text-label-bold px-6 py-3 rounded-full uppercase">Reservar ahora</button>
+</div>
+</div>
+</section>
+<!-- Registration Form -->
+<section class="mx-container-margin my-section-padding bg-secondary-container rounded-3xl p-stack-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary pink-cloud rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10 max-w-2xl">
+<h3 class="font-display-xl text-display-xl text-on-secondary-container uppercase mb-4">No te pierdas de nada</h3>
+<p class="font-body-lg text-on-secondary-fixed-variant mb-stack-md">Suscríbete para recibir noticias exclusivas, anuncios de artistas y preventas.</p>
+<form class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<input class="bg-white/20 border-white/20 rounded-xl px-4 py-3 placeholder:text-on-secondary-fixed-variant text-on-secondary-container focus:ring-on-secondary-container focus:border-on-secondary-container" placeholder="Nombre completo" type="text"/>
+<input class="bg-white/20 border-white/20 rounded-xl px-4 py-3 placeholder:text-on-secondary-fixed-variant text-on-secondary-container focus:ring-on-secondary-container focus:border-on-secondary-container" placeholder="Correo electrónico" type="email"/>
+</div>
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 rounded border-white/20 text-on-secondary-container focus:ring-on-secondary-container" id="consent" type="checkbox"/>
+<label class="text-body-sm text-on-secondary-fixed-variant" for="consent">Acepto los términos y condiciones y el tratamiento de mis datos personales.</label>
+</div>
+<button class="bg-on-secondary-container text-white font-label-bold text-label-bold px-8 py-4 rounded-full uppercase hover:scale-105 transition-transform" type="submit">Suscribirse</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding px-container-margin grid grid-cols-1 md:grid-cols-3 gap-stack-lg bg-surface-container-lowest dark:bg-surface-container-lowest rounded-t-xl">
+<div class="space-y-4">
+<span class="text-headline-md font-display-lg text-primary uppercase">estéreo picnic</span>
+<p class="font-body-sm text-on-surface-variant max-w-xs leading-relaxed">
+                El festival más grande de Colombia. Un espacio para la música, la libertad y la magia de estar juntos en un mismo lugar.
+            </p>
+<div class="flex gap-4 pt-2">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="podcasts">podcasts</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="videocam">videocam</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="font-label-bold text-label-bold text-primary uppercase">Menú</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Lineup</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Tickets</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Experiencias</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Sponsors</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-bold text-label-bold text-primary uppercase">Legal</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Privacidad</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Términos</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Cookies</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="font-label-bold text-label-bold text-primary uppercase">Aliados</h5>
+<div class="grid grid-cols-3 gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<div class="h-12 bg-white/10 rounded flex items-center justify-center"><span class="material-symbols-outlined" data-icon="token">token</span></div>
+<div class="h-12 bg-white/10 rounded flex items-center justify-center"><span class="material-symbols-outlined" data-icon="diamond">diamond</span></div>
+<div class="h-12 bg-white/10 rounded flex items-center justify-center"><span class="material-symbols-outlined" data-icon="stars">stars</span></div>
+</div>
+<p class="font-body-sm text-on-surface-variant text-[10px] mt-8">
+                © 2024 Festival Estéreo Picnic. Un Mundo Distinto.
+            </p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-surface/20 dark:bg-surface/20 backdrop-blur-lg border-t border-white/10 shadow-lg">
+<button class="flex flex-col items-center justify-center bg-tertiary text-on-tertiary rounded-full px-4 py-1 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="home" data-weight="fill">home</span>
+<span class="font-label-bold text-[10px] uppercase">Inicio</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="festival">festival</span>
+<span class="font-label-bold text-[10px] uppercase">Lineup</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-bold text-[10px] uppercase">Tickets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="map">map</span>
+<span class="font-label-bold text-[10px] uppercase">Mapa</span>
+</button>
+</nav>
+</body></html>
